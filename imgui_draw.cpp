@@ -1758,9 +1758,9 @@ void ImDrawList::AddText(ImFont* font, float font_size, const ImVec2& pos, ImU32
         clip_rect.w = ImMin(clip_rect.w, cpu_fine_clip_rect->w);
     }
     //SUMOTORI: emulate game text
-    font->RenderText(this, font_size, pos - ImVec2(font_size / 8, -font_size / 8), IM_COL32_BLACK, clip_rect,
+    font->RenderText(this, font_size, pos - ImVec2(font_size / 10.f, -font_size / 32.f), IM_COL32_BLACK, clip_rect,
         text_begin, text_end, wrap_width, (cpu_fine_clip_rect != NULL) ? ImDrawTextFlags_CpuFineClip : ImDrawTextFlags_None);
-    font->RenderText(this, font_size, pos + ImVec2(font_size / 8, -font_size / 8), IM_COL32_BLACK, clip_rect,
+    font->RenderText(this, font_size, pos + ImVec2(font_size / 10.f, -font_size / 32.f), IM_COL32_BLACK, clip_rect,
         text_begin, text_end, wrap_width, (cpu_fine_clip_rect != NULL) ? ImDrawTextFlags_CpuFineClip : ImDrawTextFlags_None);
 
     font->RenderText(this, font_size, pos, col, clip_rect, text_begin, text_end, wrap_width, (cpu_fine_clip_rect != NULL) ? ImDrawTextFlags_CpuFineClip : ImDrawTextFlags_None);
